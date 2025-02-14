@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-// import Image from "./image";
-import "../styles/PersonalInfo.css";
+// import "../styles/PersonalInfo.css";
 import "../styles/image.css";
+import "../index.css";
 
 import { BiCloudDownload } from "react-icons/bi";
 function PersonalInfo() {
@@ -87,13 +87,13 @@ function PersonalInfo() {
   };
   const ticketType = localStorage.getItem("ticket-type");
   const profilePic = localStorage.getItem("url");
-  const ticketQuantity = localStorage.getItem("ticket-quantity");
+  const ticketQuantityy = localStorage.getItem("ticket-quantity");
   const [formData, setFormData] = useState({
     fname: "",
     email: "",
     image: profilePic,
     ticket: ticketType,
-    ticketQuantity: ticketQuantity,
+    ticketQuantity: ticketQuantityy,
   });
   const [errData, setErrData] = useState({});
   console.log(formData.image);
@@ -101,7 +101,7 @@ function PersonalInfo() {
     const value = e.target.value;
     setFormData({ ...formData, [e.target.name]: value });
   };
-
+  console.log(formData.ticketQuantity);
   const handleValidation = () => {
     const newErr = {};
     // newErr.image = "";

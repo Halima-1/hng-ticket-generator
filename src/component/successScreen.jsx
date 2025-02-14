@@ -13,6 +13,7 @@ function Ticket() {
     ticket.style.display = "none";
     infoCont.style.display = "block";
   };
+  console.log(attendee);
   return (
     <>
       <div className="progress-bar">
