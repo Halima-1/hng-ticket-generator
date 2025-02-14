@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Register from "./register";
+import Conference from "./conference";
 // import Image from "./component/image";
-import PersonalInfo from "./component/personalInfo";
+// import PersonalInfo from "./component/personalInfo";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -12,10 +12,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Register />}>
-            <Route path="/" element={<Register />} />
-            {/* <Route path="/image" element={<Image />} /> */}
-          </Route>
+          <Route path="/" element={<Conference />}></Route>
         </Routes>
       </BrowserRouter>
     </>

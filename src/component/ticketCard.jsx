@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
 function Booking() {
-  const next = () => {
-    const info = document.getElementById("img-upload");
-    const intro = document.getElementById("img-upload");
-    if (localStorage.getItem("ticket-type")) {
-      (info.style.display = "block"), (intro.style.display = "none");
-    }
+  const [errMessage, setErMessage] = useState({});
+  const [ticketNum, setTicketNum] = useState({
+    ticketQuantity: "",
+  });
+  localStorage.setItem("ticket-quantity", ticketNum.ticketQuantity);
+
+  const handleChange = (e) => {
+    localStorage.setItem("ticket-quantity", ticketNum.ticketQuantity);
+
+    const value = e.target.value;
+    setTicketNum({ ...ticketNum, [e.target.name]: value });
   };
+  console.log(ticketNum);
+  const next = () => {
+    const err = {};
+    const info = document.getElementById("personal-info");
+    const intro = document.getElementById("intro");
+    const ticket = document.getElementById("ticket-container");
+
+    const ticketQuantity = document.getElementById("ticket-num").value;
+    localStorage.setItem("ticket-quantity", ticketNum.ticketQuantity);
+    if (
+      localStorage.getItem("ticket-type") &&
+      localStorage.getItem("ticket-quantity")
+    ) {
+      (info.style.display = "block"), (intro.style.display = "none");
+      ticket.style.display = "none";
+    } else {
+      err.message = "select ticket type and quantity";
+    }
+    setErMessage(err);
+  };
+
   const free = () => {
     const info = document.getElementById("free").textContent;
     localStorage.setItem("ticket-type", info);
@@ -22,11 +48,14 @@ function Booking() {
     localStorage.setItem("ticket-type", info);
   };
   // const ticketQuantity = () => {
-  const ticketQuantity = document.getElementById("ticket-num").value;
-  localStorage.setItem("ticket-quantity", ticketQuantity);
+
   // };/
   return (
     <>
+      <div className="progress-bar">
+        <p>Ticket Selection</p>
+        <p>step 1/3</p>
+      </div>
       <div className="intro">
         <h1>TECHEMBER"25</h1>
         <p>
@@ -45,21 +74,21 @@ function Booking() {
         <div className="ticket-type">
           <span>Free</span> <br />{" "}
           <span onClick={free} id="free">
-            Regular access
+            Regular
           </span>{" "}
           <br /> <span>20/52</span>
         </div>
         <div className="ticket-type">
           <b>$150</b> <br />{" "}
           <span id="vip" onClick={vip}>
-            VIP access
+            VIP
           </span>{" "}
           <br /> <span>20/52</span>
         </div>
         <div className="ticket-type">
           <b>$250</b> <br />{" "}
           <span id="vvip" onClick={vvip}>
-            VVIP access
+            VVIP
           </span>{" "}
           <br /> <span>20/52</span>
         </div>
@@ -73,14 +102,21 @@ function Booking() {
         </select> */}
         <input
           type="number"
-          name=""
+          name="ticketQuantity"
           id="ticket-num"
           placeholder="enter ticket quantity"
+          value={ticketNum.ticketQuantity}
+          onChange={handleChange}
         />
       </div>
+      {errMessage && (
+        <>
+          <p style={{ color: "red" }}>{errMessage.message}</p>
+        </>
+      )}
       <div className="btn">
         <input type="button" value="Cancel" />
-        <input type="button" value="Next" />
+        <input onClick={next} type="button" value="Next" />
       </div>
     </>
   );

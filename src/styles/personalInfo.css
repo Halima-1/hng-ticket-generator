@@ -4,6 +4,9 @@
     width: 90%;
     margin: auto;
 } */
+ #personal-info{
+    display: none;
+ }
 .input-cont{
     display: flex;
     flex-direction: column;

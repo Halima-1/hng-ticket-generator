@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -19,9 +19,15 @@ body{
   bottom: 0; */
 
 }
-h1,h2{
-  font-family: "Rubik", sans-serif;
-}
+h1{
+  font-family: "Road Rage", serif;
+  font-weight: 400;
+  font-style: normal;
+font-size: 48px;}
+  h2{
+    font-family: "Rubik", sans-serif;
+
+  }
 header{
   display: flex;
   flex-direction: row;
@@ -107,6 +113,10 @@ header .btnn{
   margin-left: 15px;
 
 }
+#ticket-container{
+  display: none;
+  width: 100%;
+}
 .intro{
   /* height: 100vh; */
   border: 2px solid #093547f6;
@@ -120,6 +130,7 @@ header .btnn{
   color: white;
   text-align: center;
   padding: 20px 10px;
+  display: block;
 }
 .intro h1{
   width: 70%;

@@ -10,7 +10,11 @@ function PersonalInfo() {
   const [isdragging, setIsdragging] = useState(false);
   const [mouseOver, setMouseOver] = useState(false);
   const fileInputRef = useRef(null);
+  const info = document.getElementById("personal-info");
+  const intro = document.getElementById("intro");
+  const infoCont = document.getElementById("info-container");
 
+  const ticket = document.getElementById("ticket-container");
   function selectFile() {
     fileInputRef.current.click();
   }
@@ -81,12 +85,15 @@ function PersonalInfo() {
     JSON.stringify(localStorage.setItem("url", uploadURL.url));
     setLoading(false);
   };
+  const ticketType = localStorage.getItem("ticket-type");
   const profilePic = localStorage.getItem("url");
-
+  const ticketQuantity = localStorage.getItem("ticket-quantity");
   const [formData, setFormData] = useState({
     fname: "",
     email: "",
     image: profilePic,
+    ticket: ticketType,
+    ticketQuantity: ticketQuantity,
   });
   const [errData, setErrData] = useState({});
   console.log(formData.image);
@@ -94,6 +101,7 @@ function PersonalInfo() {
     const value = e.target.value;
     setFormData({ ...formData, [e.target.name]: value });
   };
+
   const handleValidation = () => {
     const newErr = {};
     // newErr.image = "";
@@ -119,6 +127,9 @@ function PersonalInfo() {
       // const attendee = localStorage.getItem("attendee")
       //   ? JSON.parse(localStorage.getItem("attendee"))
       //   : [];
+      (info.style.display = "none"), (intro.style.display = "none");
+      ticket.style.display = "block";
+      infoCont.style.display = "none";
 
       const users = localStorage.getItem("users")
         ? JSON.parse(localStorage.getItem("users"))
@@ -149,7 +160,11 @@ function PersonalInfo() {
       "img-contt"
     ).style.backgroundImage = `url(${localStorage.getItem("url")})`;
   };
-
+  const prevpage = () => {
+    (info.style.display = "none"), (intro.style.display = "block");
+    ticket.style.display = "none";
+    infoCont.style.display = "block";
+  };
   return (
     <>
       <form
@@ -252,7 +267,12 @@ function PersonalInfo() {
           </label>
         </div>
         <div className="btn-cont">
-          <input className="submit-btn" type="submit" value={"Back"} />
+          <input
+            onClick={prevpage}
+            className="submit-btn"
+            type="button"
+            value={"Back"}
+          />
           <input
             className="submit-btn"
             type="submit"
