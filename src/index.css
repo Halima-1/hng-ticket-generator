@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: $text-color1;/ */
+    font-family: "Lato", serif;
+    
+}
+
+body{
+  background-color: #031418f6;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  /* position: relative;
+  height: 100vh;
+  bottom: 0; */
+
+}
+h1,h2{
+  font-family: "Rubik", sans-serif;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  background-color: #031418f6;
+  padding:10px;
+  margin-bottom: 20px;
+}
+header h2{
+  color: white;
+}
+nav{
+  background-color: #031418f6;
+
+ backdrop-filter:(blur 0.5) ;
+  /* padding:  20px; */
+  
+  /* width: 50%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+
+  /* color: $text-color2; */
+  font-size: 14px;
+  align-items: center;
+}
+li{
+  list-style: none;
+}
+.nav-item{
+  text-decoration: none;
+  color: white;
+}
+header .btnn{
+  /* margin:10px auto; */
+  background-color: rgb(219, 232, 238); 
+  border:1px solid #086b8ff6;
+  /* color: white/; */
+  cursor: pointer;
+  padding:5px 10px;
+  border-radius: 5px;
+  width: max-content;
+  height: max-content;
+  align-items: center;
+  /* margin-top: 12px; */
+}
+#info{
+  
+  /* height: 100vh; */
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  background-color: rgba(9, 44, 59,0.2);
+  backdrop-filter: blur(2px);
+  /* align-self: center;
+  align-items: center;
+  align-content: center; */
+}
+
+#info-container{
+  height: 100vh;
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  width: 60%;
+  margin:20px auto;
+  background-color: rgba(255, 255, 255,0.1); 
+  background: linear-gradient(175deg,#042230f6, rgba(255, 255, 255,0.1), #041922, #042230f6);
+
+  backdrop-filter: blur(5px);
+  color: white;
+
+}
+#info h3{
+  /* margin: auto; */
+  text-align: left;
+  color: white;
+  margin-left: 15px;
+
+}
+.intro{
+  /* height: 100vh; */
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  width: 90%;
+  margin:20px auto;
+  background-color: rgba(4, 25, 34,.3); 
+  background: linear-gradient(175deg, rgba(4, 25, 34,.3), #042230f6);
+
+  backdrop-filter: blur(5px);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+.intro h1{
+  width: 70%;
+  margin:10px auto;
+}
+.intro p{
+  width: 90%;
+  margin:10px auto;
+  line-height: 20px;
+}
+#info-container hr{
+  width: 90%;
+  margin:20px auto;
+  color: rgb(4, 25, 34); 
+  border:1px solid #1f4a5af6;
+
+}
+#ticket{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  width: 80%;
+  margin:20px auto;
+  background-color: rgba(4, 25, 34,.3); 
+  /* background: linear-gradient(175deg, rgba(4, 25, 34,.3), #042230f6); */
+
+  backdrop-filter: blur(5px);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+.ticket-type{
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  padding:  10px;
+  background-color: rgba(4, 25, 34,.3);
+  cursor: pointer;
+
+}
+.ticket-type:hover{
+  background-color: rgba(99, 137, 153, 0.3);
+  /* background-color: rgba(77, 92, 99, 0.1); */
+
+}
+.ticket-num{
+  width: 90%;
+  margin:10px auto;
+}
+.ticket-num select{
+  width: 90%;
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  padding:  10px;
+  margin:10px auto;
+  color: white;
+  background-color: rgba(4, 25, 34,.3);
+
+}
+.btn{
+  width: 50%;
+  margin:10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn input{
+  border: 2px solid #093547f6;
+  border-radius: 10px;
+  padding:  10px;
+  background-color: rgba(4, 25, 34,.3);
+  color: white;
+  width: 40%;
+  cursor: pointer;
+
+}
+.btn input:hover{
+  background-color: rgba(14, 173, 241, 0.3);
+
+}
