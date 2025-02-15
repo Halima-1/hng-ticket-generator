@@ -92,7 +92,7 @@ function PersonalInfo() {
     fname: "",
     email: "",
     image: profilePic ? profilePic : "",
-    ticket: ticketType,
+    ticket: ticketType ? ticketType : "",
     ticketQuantity: ticketQuantityy ? ticketQuantityy : "",
   });
   const [errData, setErrData] = useState({});
@@ -119,16 +119,20 @@ function PersonalInfo() {
   // form validation
   const handleSubmit = () => {
     handleValidation();
-    if (!errData.fname && !errData.email && !errData.image) {
+    if (!errData.email) {
       localStorage.setItem("attendee", JSON.stringify(formData));
 
       // console.log(errData.fname);
       info.style.display = "none";
       intro.style.display = "none";
       ticket.style.display = "block";
+
       infoCont.style.display = "none";
 
-      localStorage.removeItem("url");
+      // localStorage.removeItem("url");
+      // localStorage.removeItem("ticket-type");
+      // localStorage.removeItem("ticket-quantity");
+
       // attendee ? <b>{attendee.ticket}</b> : <b></b>;
     } else {
       return;
@@ -146,7 +150,8 @@ function PersonalInfo() {
     ).style.backgroundImage = `url(${localStorage.getItem("url")})`;
   };
   const prevpage = () => {
-    (info.style.display = "none"), (intro.style.display = "block");
+    info.style.display = "none";
+    intro.style.display = "block";
     ticket.style.display = "none";
     infoCont.style.display = "block";
   };

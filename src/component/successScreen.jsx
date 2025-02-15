@@ -7,15 +7,19 @@ function Ticket() {
   const attendee = JSON.parse(localStorage.getItem("attendee"));
   const infoCont = document.getElementById("info-container");
 
-  const info = document.getElementById("attendeeForm");
+  // const info = document.getElementById("attendeeForm");
   const intro = document.getElementById("booking");
   const ticket = document.getElementById("ticket-container");
   const prevpage = () => {
     infoCont.style.display = "block";
 
-    info.style.display = "block";
-    intro.style.display = "none";
+    // info.style.display = "none";
+    intro.style.display = "block";
     ticket.style.display = "none";
+    localStorage.removeItem("url");
+    localStorage.removeItem("attendee");
+    localStorage.removeItem("ticket-type");
+    localStorage.removeItem("ticket-quantity");
   };
   console.log(attendee);
   return (
@@ -38,7 +42,7 @@ function Ticket() {
             2025 | 7.00pm
           </p>{" "}
           <div className="ticket-img">
-            <img src={attendee && attendee ? attendee.image : ""} alt="user" />
+            <img src={attendee ? attendee.image : null} alt="user" />
           </div>
         </div>
         <div className="details">
