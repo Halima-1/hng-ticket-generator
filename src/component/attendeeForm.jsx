@@ -1,8 +1,6 @@
 import React, { useRef, useState } from "react";
-// import "../styles/PersonalInfo.css";
 import "../styles/image.css";
 import "../index.css";
-
 import { BiCloudDownload } from "react-icons/bi";
 function PersonalInfo() {
   const [loading, setLoading] = useState(false);
@@ -10,11 +8,11 @@ function PersonalInfo() {
   const [isdragging, setIsdragging] = useState(false);
   const [mouseOver, setMouseOver] = useState(false);
   const fileInputRef = useRef(null);
-  const info = document.getElementById("personal-info");
-  const intro = document.getElementById("intro");
+  const info = document.getElementById("attendeeForm");
+  const intro = document.getElementById("booking");
   const infoCont = document.getElementById("info-container");
-
   const ticket = document.getElementById("ticket-container");
+  //  to select image for the ticket
   function selectFile() {
     fileInputRef.current.click();
   }
@@ -55,11 +53,12 @@ function PersonalInfo() {
     event.preventDefault();
     setIsdragging(false);
   };
+
+  // To drag and drop image
   const drop = async (event) => {
     event.preventDefault();
     setIsdragging(false);
     const file = event.dataTransfer.files[0];
-    // JSON.stringify(localStorage.setItem("url", uploadURL.url));
     if (!file) return;
     setLoading(true);
 
@@ -83,6 +82,7 @@ function PersonalInfo() {
     console.log(file.name);
     console.log(uploadURL);
     JSON.stringify(localStorage.setItem("url", uploadURL.url));
+    document.getElementById("imgErr").innerHTML = "";
     setLoading(false);
   };
   const ticketType = localStorage.getItem("ticket-type");
@@ -91,9 +91,9 @@ function PersonalInfo() {
   const [formData, setFormData] = useState({
     fname: "",
     email: "",
-    image: profilePic,
+    image: profilePic ? profilePic : "",
     ticket: ticketType,
-    ticketQuantity: ticketQuantityy,
+    ticketQuantity: ticketQuantityy ? ticketQuantityy : "",
   });
   const [errData, setErrData] = useState({});
   console.log(formData.image);
@@ -106,10 +106,8 @@ function PersonalInfo() {
     const newErr = {};
     // newErr.image = "";
 
-    if (formData.image == "" || formData.image === null) {
+    if (formData.image == "") {
       newErr.image = "upload a profile pic";
-    } else if (formData.image !== "") {
-      newErr.image = "";
     } else if (formData.fname == "") {
       newErr.fname = "name require";
     } else if (formData.email == "") {
@@ -117,41 +115,28 @@ function PersonalInfo() {
     }
     setErrData(newErr);
   };
-
+  // console.log(errData.image);
   // form validation
   const handleSubmit = () => {
     handleValidation();
-    if (errData) {
+    if (!errData.fname && !errData.email && !errData.image) {
       localStorage.setItem("attendee", JSON.stringify(formData));
 
-      // const attendee = localStorage.getItem("attendee")
-      //   ? JSON.parse(localStorage.getItem("attendee"))
-      //   : [];
-      (info.style.display = "none"), (intro.style.display = "none");
+      // console.log(errData.fname);
+      info.style.display = "none";
+      intro.style.display = "none";
       ticket.style.display = "block";
       infoCont.style.display = "none";
 
-      const users = localStorage.getItem("users")
-        ? JSON.parse(localStorage.getItem("users"))
-        : [];
-
-      const emailValidation = users.find(
-        (item) => item.email == formData.email
-      );
-      if (emailValidation) {
-        console.log("Email Already Exist");
-        return;
-      }
-      console.log(errData);
-      users.push(formData);
-
-      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.removeItem("url");
+      // attendee ? <b>{attendee.ticket}</b> : <b></b>;
     } else {
       return;
     }
+    console.log(errData);
   };
-  console.log(formData.image);
-  console.log(errData);
+  console.log(formData.fname);
+  console.log(errData.length);
 
   // mouse over image
   const mouseOverr = () => {
@@ -190,6 +175,13 @@ function PersonalInfo() {
             onDragOver={dragOver}
             onDragLeave={dragLeave}
           >
+            {errData && (
+              <>
+                <span id="imgErr" style={{ color: "red" }}>
+                  {profilePic ? "" : errData.image}
+                </span>
+              </>
+            )}
             {isdragging ? (
               <>
                 <p>drop image here</p>
@@ -207,11 +199,7 @@ function PersonalInfo() {
                 </p>
               </>
             )}
-            {errData && errData.image == "" ? (
-              <>
-                <span>{errData.image}</span>
-              </>
-            ) : null}
+
             <input
               type="file"
               onChange={onFileSelect}
@@ -234,7 +222,7 @@ function PersonalInfo() {
             name="fname"
             id="name"
             placeholder="Name"
-            required
+            // required
             value={formData.fname}
             onChange={handleChange}
           />
@@ -251,7 +239,7 @@ function PersonalInfo() {
             value={formData.email}
             placeholder="hello@gmail.com"
             onChange={handleChange}
-            required
+            // required
           />
           {errData.email && <p style={{ color: "red" }}>{errData.email}</p>}
         </div>

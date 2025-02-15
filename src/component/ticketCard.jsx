@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-
+import ProgressBar from "./progress1";
 function Booking() {
   const [errMessage, setErMessage] = useState({});
   const [ticketNum, setTicketNum] = useState({
@@ -17,8 +17,8 @@ function Booking() {
   console.log(ticketNum);
   const next = () => {
     const err = {};
-    const info = document.getElementById("personal-info");
-    const intro = document.getElementById("intro");
+    const info = document.getElementById("attendeeForm");
+    const intro = document.getElementById("booking");
     const ticket = document.getElementById("ticket-container");
 
     const ticketQuantity = document.getElementById("ticket-num").value;
@@ -52,10 +52,6 @@ function Booking() {
   // };/
   return (
     <>
-      <div className="progress-bar">
-        <p>Ticket Selection</p>
-        <p>step 1/3</p>
-      </div>
       <div className="intro">
         <h1>TECHEMBER"25</h1>
         <p>
@@ -94,7 +90,8 @@ function Booking() {
         </div>
       </div>
       <div className="ticket-num">
-        <p>Number of Ticket:</p>
+        {/* <p>Number of Ticket:</p> */}
+        <label htmlFor="ticketQuantity">Number of Ticket:</label>
         {/* <select name="ticket-num" id="ticket-num">
           <option value="1">1</option>
           <option value="">2</option>

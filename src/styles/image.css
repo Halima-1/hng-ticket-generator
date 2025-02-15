@@ -17,7 +17,7 @@
     position: relative;
 
   width: 80%;
-  height: 110px;
+  height: 120px;
   background-color: rgb(4, 16, 22);
   margin: 10px auto;
   margin-top: 20px;
@@ -30,7 +30,7 @@
   border-radius: 20px;
   background-color: rgba(43, 96, 119, 0.5);
   /* padding: 10px 0;s */
-  bottom: 10px;
+  bottom: 15px;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center center;

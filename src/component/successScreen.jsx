@@ -1,17 +1,21 @@
 import React from "react";
 import "../styles/ticket.css";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import ProgressBar from "./progress3";
+
 function Ticket() {
   const attendee = JSON.parse(localStorage.getItem("attendee"));
   const infoCont = document.getElementById("info-container");
 
-  const info = document.getElementById("personal-info");
-  const intro = document.getElementById("intro");
+  const info = document.getElementById("attendeeForm");
+  const intro = document.getElementById("booking");
   const ticket = document.getElementById("ticket-container");
   const prevpage = () => {
-    (info.style.display = "block"), (intro.style.display = "none");
-    ticket.style.display = "none";
     infoCont.style.display = "block";
+
+    info.style.display = "block";
+    intro.style.display = "none";
+    ticket.style.display = "none";
   };
   console.log(attendee);
   return (
@@ -20,37 +24,39 @@ function Ticket() {
         <p>Ready</p>
         <p>3/3</p>
       </div>
+      <ProgressBar />
+
       <div className="success">
         <h2>Your Ticket is Booked!</h2>
         <p>Check your email for a copy or you can download</p>
       </div>
       <div className="ticket-frame">
         <div className="ticket-container">
-          <h2>Techember Fest''25</h2>
+          <h1>Techember Fest''25</h1>
           <p>
             <HiOutlineLocationMarker color="red" /> Techember"25 || March 15,
             2025 | 7.00pm
           </p>{" "}
           <div className="ticket-img">
-            <img src={localStorage.getItem("url")} alt="user" />
+            <img src={attendee.image} alt="user" />
           </div>
         </div>
         <div className="details">
           <div>
-            <p> Enter your name</p>
+            <p> name:</p>
             {attendee && <b>{attendee.fname}</b>}
           </div>
           <div>
-            <p> Enter your email</p>
-            <b>{attendee.email.slice(0, 12)} ...</b>
+            <p>email:</p>
+            {attendee && attendee ? <b>{attendee.email}</b> : <b></b>}
           </div>
           <div>
-            <p> Ticket type</p>
-            <b>{attendee.ticket}</b>
+            <p> Ticket:</p>
+            {attendee && attendee ? <b>{attendee.ticket}</b> : <b></b>}
           </div>
           <div>
             <p> No of ticket</p>
-            <b>{attendee.ticketQuantity}</b>
+            {attendee ? <b>{attendee.ticketQuantity}</b> : <b></b>}
           </div>
         </div>
       </div>

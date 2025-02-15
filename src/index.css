@@ -84,10 +84,12 @@ header .btnn{
   /* height: 100vh; */
   border: 2px solid #093547f6;
   border-radius: 10px;
-  width: 60%;
+  width: 50%;
   margin: auto;
   background-color: rgba(9, 44, 59,0.2);
   backdrop-filter: blur(2px);
+  color: white;
+
   /* align-self: center;
   align-items: center;
   align-content: center; */
@@ -141,13 +143,14 @@ header .btnn{
   margin:10px auto;
   line-height: 20px;
 }
-#info-container hr{
+ hr{
   width: 90%;
   margin:20px auto;
   color: rgb(4, 25, 34); 
   border:1px solid #1f4a5af6;
 
 }
+
 #ticket{
   width: 90%;
   display: flex;
@@ -179,10 +182,10 @@ header .btnn{
 
 }
 .ticket-num{
-  width: 90%;
+  width: 80%;
   margin:10px auto;
 }
-.ticket-num select{
+.ticket-num input{
   width: 90%;
   border: 2px solid #093547f6;
   border-radius: 10px;
@@ -190,6 +193,7 @@ header .btnn{
   margin:10px auto;
   color: white;
   background-color: rgba(4, 25, 34,.3);
+  outline: none;
 
 }
 .btn{

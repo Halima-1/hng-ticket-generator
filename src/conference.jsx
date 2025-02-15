@@ -9,6 +9,11 @@ import PersonalInfo from "./component/attendeeForm";
 import { BsArrow90DegRight } from "react-icons/bs";
 import { CgArrowTopRight } from "react-icons/cg";
 import Ticket from "./component/successScreen";
+import ProgressBarOne from "./component/progress1";
+
+import ProgressBarTwo from "./component/progress2";
+import ProgressBarThree from "./component/progress3";
+
 function Conference() {
   // const [formstep, setFormStep] =useState(0)
   // const completeForm =()=>{
@@ -71,15 +76,25 @@ function Conference() {
         </button>
       </header>
       <section id="info">
-        <div id="info-container">
-          <div id="intro">
+        <div id="booking">
+          <div className="progress-bar">
+            <p>Ticket Selection</p>
+            <p>step 1/3</p>
+          </div>
+          <ProgressBarOne />
+          <div id="info-container">
             <Booking />
           </div>
-          <div id="personal-info">
-            <div className="progress-bar">
-              <p>Attendee details</p>
-              <p>2/3</p>
-            </div>
+        </div>
+
+        <div id="attendeeForm">
+          <div className="progress-bar">
+            <p>Attendee details</p>
+            <p>2/3</p>
+          </div>
+          <ProgressBarTwo />
+
+          <div id="info">
             <PersonalInfo />
           </div>
         </div>
