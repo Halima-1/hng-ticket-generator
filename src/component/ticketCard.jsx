@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import ProgressBar from "./progress1";
 function Booking() {
+  localStorage.clear();
   const [errMessage, setErMessage] = useState({});
   const [ticketNum, setTicketNum] = useState({
     ticketQuantity: "",

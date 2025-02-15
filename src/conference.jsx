@@ -76,7 +76,7 @@ function Conference() {
         </button>
       </header>
       <section id="info">
-        <div id="booking">
+        <div id="booking" style={{ display: "block" }}>
           <div className="progress-bar">
             <p>Ticket Selection</p>
             <p>step 1/3</p>

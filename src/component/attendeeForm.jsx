@@ -119,15 +119,15 @@ function PersonalInfo() {
   // form validation
   const handleSubmit = () => {
     handleValidation();
-    if (!errData.email) {
-      localStorage.setItem("attendee", JSON.stringify(formData));
-
-      // console.log(errData.fname);
+    if (!errData) {
       info.style.display = "none";
       intro.style.display = "none";
       ticket.style.display = "block";
 
       infoCont.style.display = "none";
+      localStorage.setItem("attendee", JSON.stringify(formData));
+
+      console.log(errData.email);
 
       // localStorage.removeItem("url");
       // localStorage.removeItem("ticket-type");
@@ -140,7 +140,7 @@ function PersonalInfo() {
     console.log(errData);
   };
   console.log(formData.fname);
-  console.log(errData.length);
+  console.log(errData);
 
   // mouse over image
   const mouseOverr = () => {
