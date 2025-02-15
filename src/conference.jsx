@@ -87,7 +87,7 @@ function Conference() {
           </div>
         </div>
 
-        <div id="attendeeForm">
+        <div id="attendeeForm" style={{ display: "none" }}>
           <div className="progress-bar">
             <p>Attendee details</p>
             <p>2/3</p>
