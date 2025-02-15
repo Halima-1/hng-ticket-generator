@@ -38,13 +38,13 @@ function Ticket() {
             2025 | 7.00pm
           </p>{" "}
           <div className="ticket-img">
-            <img src={attendee.image} alt="user" />
+            <img src={attendee && attendee ? attendee.image : ""} alt="user" />
           </div>
         </div>
         <div className="details">
           <div>
             <p> name:</p>
-            {attendee && <b>{attendee.fname}</b>}
+            {attendee && attendee ? <b>{attendee.fname}</b> : <b></b>}
           </div>
           <div>
             <p>email:</p>
