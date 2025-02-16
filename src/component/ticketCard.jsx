@@ -60,34 +60,24 @@ function Booking() {
           spot now!
         </p>
         <p>
-          <HiOutlineLocationMarker color="red" /> Techember"25 || March 15, 2025
-          | 7.00pm
+          <HiOutlineLocationMarker color="red" /> Oluyole, Ibadan || March 15,
+          2025 | 7.00pm
         </p>
       </div>
       <hr />
-      <p>Select ticket type:</p>
+      <p className="type">Select ticket type:</p>
 
       <div id="ticket">
-        <div className="ticket-type">
-          <span>Free</span> <br />{" "}
-          <span onClick={free} id="free">
-            Regular
-          </span>{" "}
-          <br /> <span>20/52</span>
+        <div className="ticket-type" onClick={free}>
+          <span>Free</span> <br /> <span id="free">Regular</span> <br />{" "}
+          <span>20/52</span>
         </div>
-        <div className="ticket-type">
-          <b>$150</b> <br />{" "}
-          <span id="vip" onClick={vip}>
-            VIP
-          </span>{" "}
-          <br /> <span>20/52</span>
+        <div className="ticket-type" onClick={vip}>
+          <b>$150</b> <br /> <span id="vip">VIP</span> <br /> <span>20/52</span>
         </div>
-        <div className="ticket-type">
-          <b>$250</b> <br />{" "}
-          <span id="vvip" onClick={vvip}>
-            VVIP
-          </span>{" "}
-          <br /> <span>20/52</span>
+        <div className="ticket-type" onClick={vvip}>
+          <b>$250</b> <br /> <span id="vvip">VVIP</span> <br />{" "}
+          <span>20/52</span>
         </div>
       </div>
       <div className="ticket-num">

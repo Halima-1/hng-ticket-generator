@@ -100,27 +100,21 @@ header h2{
 
 }
 #info{
-  
-  /* height: 100vh; */
-  border: 2px solid #093547f6;
+    border: 2px solid #093547f6;
   border-radius: 10px;
-  width: 50%;
+  width: 90%;
   margin: auto;
   background-color: rgba(9, 44, 59,0.2);
   backdrop-filter: blur(2px);
   color: white;
-
-  /* align-self: center;
-  align-items: center;
-  align-content: center; */
 }
 
 #info-container{
   display: block;
-  height: 100vh;
+  /* height: 100vh; */
   border: 2px solid #093547f6;
   border-radius: 10px;
-  width: 60%;
+  width: 80%;
   margin:20px auto;
   background-color: rgba(255, 255, 255,0.1); 
   background: linear-gradient(175deg,#042230f6, rgba(255, 255, 255,0.1), #041922, #042230f6);
@@ -134,7 +128,7 @@ header h2{
   text-align: left;
   color: white;
   margin-left: 15px;
-
+  font-size: 16px;
 }
 #ticket-container{
   display: none;
@@ -160,11 +154,13 @@ header h2{
   display: block;
 }
 .intro h1{
-  width: 70%;
+  width: 90%;
   margin:10px auto;
+  font-size: 40px;
+  
 }
 .intro p{
-  width: 90%;
+  width: 95%;
   margin:10px auto;
   line-height: 20px;
 }
@@ -179,26 +175,29 @@ header h2{
 #ticket{
   width: 90%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   border: 2px solid #093547f6;
   border-radius: 10px;
-  width: 80%;
+  /* width: 80%; */
   margin:20px auto;
   background-color: rgba(4, 25, 34,.3); 
   /* background: linear-gradient(175deg, rgba(4, 25, 34,.3), #042230f6); */
 
   backdrop-filter: blur(5px);
   color: white;
-  text-align: center;
   padding: 20px 10px;
 }
 .ticket-type{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border: 2px solid #093547f6;
   border-radius: 10px;
-  padding:  10px;
+  padding:  20px;
   background-color: rgba(4, 25, 34,.3);
   cursor: pointer;
+  margin-top: 15px;
 
 }
 .ticket-type:hover{
@@ -206,12 +205,17 @@ header h2{
   /* background-color: rgba(77, 92, 99, 0.1); */
 
 }
-.ticket-num{
+.type{
+  margin: auto;
   width: 80%;
+
+}
+.ticket-num{
+  width: 90%;
   margin:10px auto;
 }
 .ticket-num input{
-  width: 90%;
+  width: 100%;
   border: 2px solid #093547f6;
   border-radius: 10px;
   padding:  10px;
@@ -222,10 +226,10 @@ header h2{
 
 }
 .btn{
-  width: 50%;
+  width: 80%;
   margin:10px auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 .btn input{
@@ -234,8 +238,9 @@ header h2{
   padding:  10px;
   background-color: rgba(4, 25, 34,.3);
   color: white;
-  width: 40%;
+  width: 80%;
   cursor: pointer;
+  margin:10px auto;
 
 }
 .btn input:hover{
@@ -361,6 +366,143 @@ textarea{
     align-items: center;
     margin-top: 12px;
   }
+
+  /* query 2 */
+  #info{
+  
+    width: 70%;
+  }
+  
+  #info-container{
+    display: block;
+    width: 90%;
+    margin:20px auto;
+  
+  }
+  #info h3{
+    text-align: left;
+    color: white;
+    margin-left: 15px;  
+  }
+  #ticket-container{
+    display: none;
+    width: 100%;
+  }
+  #attendeeForm{
+    display: none;
+  
+  }
+  .intro{
+    /* height: 100vh; */
+
+    width: 90%;
+    text-align: center;
+    padding: 20px 10px;
+    display: block;
+  }
+  .intro h1{
+    width: 90%;
+    margin:10px auto;
+    font-size: 42px;
+  }
+  .intro p{
+    width: 90%;
+    margin:10px auto;
+    line-height: 25px;
+  }
+   hr{
+    width: 90%;
+    margin:20px auto;
+  
+  }
+  
+  #ticket{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    /* width: 80%; */
+    margin:20px auto;
+    text-align: center;
+    padding: 20px 10px;
+  }
+  .ticket-type{
+    background-color: rgba(4, 25, 34,.3);
+    cursor: pointer;
+  
+  }
+  .ticket-num{
+    width: 80%;
+    margin:10px auto;
+  }
+  .ticket-num input{
+    width: 90%;
+  
+  }
+  .btn{
+    width: 70%;
+    margin:10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn input{
+    width: 40%;  
+  }
+  .input-cont{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin:10px auto;
+  }
+  form div label{
+    width: 90%;
+    font-size: 16px;
+  }
+  form div input{
+    width: 100%;
+    border:1px solid #1f4a5af6;
+    border-radius: 10px;
+    padding: 5px;
+    margin:5px auto;
+    color: white;
+    background-color: rgba(4, 25, 34,.3);
+    outline: none; 
+  }
+  textarea{
+    width: 100%;
+    margin:10px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    border:1px solid #1f4a5af6;
+    color: white;
+    text-align: left;
+    overflow-y: hidden;
+    outline: none; 
+    padding: 10px;
+    border-radius: 10px;
+  
+  
+  }
+  .btn-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin:10px auto;
+  }
+  .submit-btn{
+    margin:10px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    border:1px solid #086b8ff6;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+  }
+  .submit-btn:hover{
+    background-color: rgb(12, 99, 136); 
+  
+  }
 }@media (min-width: 768px) {
   aside{
     display: none;
@@ -414,6 +556,414 @@ textarea{
     align-items: center;
     margin-top: 12px;
   }
+
+   /* query 2 */
+   #info{
+  
+    width: 70%;
+  }
+  
+  #info-container{
+    display: block;
+    width: 90%;
+  
+  }
+  #info h3{
+    text-align: left;
+    color: white;
+    margin-left: 15px;
+  
+  }
+  #ticket-container{
+    display: none;
+    width: 100%;
+  }
+  #attendeeForm{
+    display: none;
+  
+  }
+  .intro{
+    width: 90%;
+    margin:20px auto;
+    display: block;
+  }
+  .intro h1{
+    width: 70%;
+    margin:10px auto;
+  }
+  .intro p{
+    width: 90%;
+    margin:10px auto;
+    line-height: 20px;
+  }
+  #ticket{
+    width: 97%;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    gap: 15px;
+    margin:20px auto;
+
+    /* padding: 20px 10px; */
+  }
+  .ticket-type{
+    display: flex;
+    flex-direction: column;
+    
+    /* padding:  10px; */
+  }
+  .ticket-num{
+    width: 80%;
+    margin:10px auto;
+  }
+  .ticket-num input{
+    width: 90%;
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    padding:  10px;
+    margin:10px auto;
+    color: white;
+    background-color: rgba(4, 25, 34,.3);
+    outline: none;
+  
+  }
+  .btn{
+    width: 50%;
+    margin:10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn input{
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    padding:  10px;
+    background-color: rgba(4, 25, 34,.3);
+    color: white;
+    width: 40%;
+    cursor: pointer;
+  
+  }
+  .btn input:hover{
+    background-color: rgba(14, 173, 241, 0.3);
+  
+  }
+  
+  
+  #personal-info{
+    display: none;
+  }
+  .input-cont{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin:10px auto;
+  
+  }
+  form div label{
+    width: 90%;
+    font-size: 16px;
+  }
+  form div input{
+    width: 100%;
+    border:1px solid #1f4a5af6;
+    border-radius: 10px;
+    padding: 5px;
+    margin:5px auto;
+    color: white;
+    background-color: rgba(4, 25, 34,.3);
+    outline: none; 
+  }
+  textarea{
+    width: 100%;
+    margin:10px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    border:1px solid #1f4a5af6;
+    color: white;
+    text-align: left;
+    overflow-y: hidden;
+    outline: none; 
+    padding: 10px;
+    border-radius: 10px;
+  
+  
+  }
+  .btn-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin:10px auto;
+  }
+  .submit-btn{
+    margin:10px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    border:1px solid #086b8ff6;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+  }
+  .submit-btn:hover{
+    background-color: rgb(12, 99, 136); 
+  
+  }
 }
 @media (min-width: 1100px) {
+  aside{
+    display: none;
+  }
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    background-color: #031418f6;
+    padding:10px;
+    margin-bottom: 20px;
+  }
+  
+  nav{
+    background-color: #031418f6;
+  
+   backdrop-filter:(blur 0.5) ;
+    /* padding:  20px; */
+    
+    /* width: 50%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+  
+    /* color: $text-color2; */
+    font-size: 14px;
+    align-items: center;
+  }
+  li{
+    list-style: none;
+  }
+  .nav-item{
+    text-decoration: none;
+    color: white;
+  }
+  header .btnn{
+    /* margin:10px auto; */
+    background-color: rgb(219, 232, 238); 
+    border:1px solid #086b8ff6;
+    /* color: white/; */
+    cursor: pointer;
+    padding:5px 10px;
+    border-radius: 5px;
+    width: max-content;
+    height: max-content;
+    align-items: center;
+    margin-top: 12px;
+  }
+
+   /* query 2 */
+   #info{
+  
+    /* height: 100vh; */
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(9, 44, 59,0.2);
+    backdrop-filter: blur(2px);
+    color: white;
+  
+    /* align-self: center;
+    align-items: center;
+    align-content: center; */
+  }
+  
+  #info-container{
+    display: block;
+    width: 60%;
+    margin:20px auto;
+    background-color: rgba(255, 255, 255,0.1); 
+    background: linear-gradient(175deg,#042230f6, rgba(255, 255, 255,0.1), #041922, #042230f6);
+  
+    backdrop-filter: blur(5px);
+    color: white;
+  
+  }
+  #info h3{
+    /* margin: auto; */
+    text-align: left;
+    color: white;
+    margin-left: 15px;
+  
+  }
+  #ticket-container{
+    display: none;
+    width: 100%;
+  }
+  #attendeeForm{
+    display: none;
+  
+  }
+  .intro{
+    /* height: 100vh; */
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    width: 90%;
+    margin:20px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    background: linear-gradient(175deg, rgba(4, 25, 34,.3), #042230f6);
+  
+    backdrop-filter: blur(5px);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    display: block;
+  }
+  .intro h1{
+    width: 70%;
+    margin:10px auto;
+  }
+  .intro p{
+    width: 90%;
+    margin:10px auto;
+    line-height: 20px;
+  }
+   hr{
+    width: 90%;
+    margin:20px auto;
+    color: rgb(4, 25, 34); 
+    border:1px solid #1f4a5af6;
+  
+  }
+  
+  #ticket{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    width: 80%;
+    margin:20px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    /* background: linear-gradient(175deg, rgba(4, 25, 34,.3), #042230f6); */
+  
+    backdrop-filter: blur(5px);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+  }
+  .ticket-type{
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    padding:  10px;
+    background-color: rgba(4, 25, 34,.3);
+    cursor: pointer;
+  
+  }
+  .ticket-type:hover{
+    background-color: rgba(99, 137, 153, 0.3);
+    /* background-color: rgba(77, 92, 99, 0.1); */
+  
+  }
+  .ticket-num{
+    width: 80%;
+    margin:10px auto;
+  }
+  .ticket-num input{
+    width: 90%;
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    padding:  10px;
+    margin:10px auto;
+    color: white;
+    background-color: rgba(4, 25, 34,.3);
+    outline: none;
+  
+  }
+  .btn{
+    width: 50%;
+    margin:10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn input{
+    border: 2px solid #093547f6;
+    border-radius: 10px;
+    padding:  10px;
+    background-color: rgba(4, 25, 34,.3);
+    color: white;
+    width: 40%;
+    cursor: pointer;
+  
+  }
+  .btn input:hover{
+    background-color: rgba(14, 173, 241, 0.3);
+  
+  }
+  
+  
+  #personal-info{
+    display: none;
+  }
+  .input-cont{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin:10px auto;
+  
+  }
+  form div label{
+    width: 90%;
+    font-size: 16px;
+  }
+  form div input{
+    width: 100%;
+    border:1px solid #1f4a5af6;
+    border-radius: 10px;
+    padding: 5px;
+    margin:5px auto;
+    color: white;
+    background-color: rgba(4, 25, 34,.3);
+    outline: none; 
+  }
+  textarea{
+    width: 100%;
+    margin:10px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    border:1px solid #1f4a5af6;
+    color: white;
+    text-align: left;
+    overflow-y: hidden;
+    outline: none; 
+    padding: 10px;
+    border-radius: 10px;
+  
+  
+  }
+  .btn-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin:10px auto;
+  }
+  .submit-btn{
+    margin:10px auto;
+    background-color: rgba(4, 25, 34,.3); 
+    border:1px solid #086b8ff6;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+  }
+  .submit-btn:hover{
+    background-color: rgb(12, 99, 136); 
+  
+  }
 }
