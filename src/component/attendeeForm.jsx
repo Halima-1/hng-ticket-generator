@@ -227,7 +227,7 @@ function PersonalInfo() {
             name="fname"
             id="name"
             placeholder="Name"
-            // required
+            required
             value={formData.fname}
             onChange={handleChange}
           />
@@ -244,7 +244,7 @@ function PersonalInfo() {
             value={formData.email}
             placeholder="hello@gmail.com"
             onChange={handleChange}
-            // required
+            required
           />
           {errData.email && <p style={{ color: "red" }}>{errData.email}</p>}
         </div>
