@@ -99,6 +99,9 @@ function Conference() {
           onMouseOver={() => {
             setHover(!hover);
           }}
+          onMouseLeave={() => {
+            setHover(!hover);
+          }}
         >
           Ticket
           {hover ? (
