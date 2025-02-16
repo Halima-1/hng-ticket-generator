@@ -6,16 +6,26 @@ import { useNavigate } from "react-router-dom";
 // import Image from "./component/image";
 import Booking from "./component/ticketCard";
 import PersonalInfo from "./component/attendeeForm";
-import { BsArrow90DegRight } from "react-icons/bs";
+import {
+  BsArrow90DegRight,
+  BsArrowRight,
+  BsMenuButton,
+  BsMenuButtonFill,
+} from "react-icons/bs";
 import { CgArrowTopRight } from "react-icons/cg";
 import Ticket from "./component/successScreen";
 import ProgressBarOne from "./component/progress1";
 
 import ProgressBarTwo from "./component/progress2";
 import ProgressBarThree from "./component/progress3";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineMenuFold } from "react-icons/ai";
 
 function Conference() {
-  // const [formstep, setFormStep] =useState(0)
+  const [toggle, setToggle] = useState(false);
+  const [hover, setHover] = useState(false);
+
+  // setToggle(!toggle);
   // const completeForm =()=>{
   //   setFormStep (cur + 1)
   // }
@@ -33,6 +43,21 @@ function Conference() {
     <>
       <header>
         <h2>Ticket</h2>
+        {!toggle ? (
+          <GiHamburgerMenu
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+            className="toggle"
+          />
+        ) : (
+          <AiOutlineMenuFold
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+            className="toggle"
+          />
+        )}
         <nav>
           <li>
             <NavLink
@@ -68,13 +93,66 @@ function Conference() {
             </NavLink>
           </li>
         </nav>
-        <button type="button" className="btnn">
+        <button
+          type="button"
+          className="btnn"
+          onMouseOver={() => {
+            setHover(!hover);
+          }}
+        >
           Ticket
-          <>
-            <CgArrowTopRight />
-          </>
+          {hover ? (
+            <>
+              <BsArrowRight />
+            </>
+          ) : (
+            <>
+              <CgArrowTopRight />
+            </>
+          )}
         </button>
       </header>
+      {toggle ? (
+        <>
+          <aside>
+            <nav>
+              <li>
+                <NavLink
+                  className={"nav-item"}
+                  to={"/cart"}
+                  style={({ isActive }) =>
+                    isActive ? { color: "red" } : undefined
+                  }
+                >
+                  Event
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={"nav-item"}
+                  to={"/cart"}
+                  style={({ isActive }) =>
+                    isActive ? { color: "red" } : undefined
+                  }
+                >
+                  My Ticket
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={"nav-item"}
+                  to={"/cart"}
+                  style={({ isActive }) =>
+                    isActive ? { color: "red" } : undefined
+                  }
+                >
+                  About Project
+                </NavLink>
+              </li>
+            </nav>
+          </aside>
+        </>
+      ) : null}
       <section id="info">
         <div id="booking" style={{ display: "block" }}>
           <div className="progress-bar">
